@@ -8,3 +8,7 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+# [react-native-config] # if you enable proguard and hermes
+-keep class com.facebook.hermes.unicode.** { *; }
+-keep class com.how_to_integrate_with_react_native.BuildConfig { *; } 

@@ -23,11 +23,3 @@ target 'how_to_integrate_with_react_native' do
   end
 end
 
-target 'how_to_integrate_with_react_native-tvOS' do
-  # Pods for how_to_integrate_with_react_native-tvOS
-
-  target 'how_to_integrate_with_react_native-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end

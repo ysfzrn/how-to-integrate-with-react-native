@@ -1,26 +1,31 @@
 # How to integrate React Native Config
 
-**Library Repo:** https://github.com/luggit/react-native-config
+**Library Repo:** https://github.com/invertase/react-native-firebase
 
 **Versions:**
 
 - react-native: 0.63.4
 - react-native-config: 1.4.2
+- @react-native-firebase/app: 10.8.0
 
 **Platforms:**
 
 - iOS
 - Android
 
-**XCode Changes**
+**installation:**
 
-- Staging Configuration![Staging Configuration-1](./images/1.png)
-- Staging and Production bundle identifier![Staging Configuration-2](./images/2.png)
-- App Name Setting. Don't forget change info.plist![Staging Configuration-3](./images/3.png) 
-
-
+```sh
+yarn add @react-native-firebase/app
+cd ios && pod install --repo-update
+cd .. && touch prebuild-staging-ios.sh && touch prebuild-production-ios.sh
+chmod +x ./prebuild-staging-ios.sh
+chmod +x ./prebuild-production-ios.sh
+```
 
 **CAUTIONS**
 
-- You have to generate your own private release.keystore (for Android)
-- I deleted tvOS and tvOSTests. You don't have to do this. It's up to you (for iOS)
+- After installation, you have to create two seperate firebase project for staging and production.
+- You should add separate iOS and Android apps for both staging and production projects.
+- You should create your own goolge-service-info.plist and google.services.json files
+- Don't forget add GoogleService-Info.plist file to XCode project via XCode

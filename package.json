@@ -7,13 +7,16 @@
     "android:production": "react-native run-android --variant=productiondebug",
     "android:staging:release": "react-native run-android --variant=stagingrelease",
     "android:production:release": "react-native run-android --variant=productionrelease",
-    "ios:staging": "react-native run-ios --scheme 'how_to_integrate_with_react_native(staging)'",
-    "ios:production": "react-native run-ios --scheme 'how_to_integrate_with_react_native'",
+    "prebuild-staging":"./prebuild-staging-ios.sh",
+    "prebuild-production":"./prebuild-production-ios.sh",
+    "ios:staging": "yarn run prebuild-staging && react-native run-ios --scheme 'how_to_integrate_with_react_native(staging)'",
+    "ios:production": "yarn run prebuild-production && react-native run-ios --scheme 'how_to_integrate_with_react_native'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-firebase/app": "^10.8.0",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-config": "^1.4.2"

@@ -1,4 +1,4 @@
-# How to integrate React Native Config
+# How to integrate React Native Firebase
 
 **Library Repo:** https://github.com/invertase/react-native-firebase
 
